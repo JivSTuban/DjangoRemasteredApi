@@ -8,4 +8,5 @@ urlpatterns = [
         views.BlogPostRetrieveUpdateDestory.as_view(),
         name="update",
     ),
+    path("hello/",views.home, name="home")
 ]

@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from rest_framework import generics, status
 from rest_framework.response import Response
@@ -18,3 +19,6 @@ class BlogPostRetrieveUpdateDestory(generics.RetrieveUpdateDestroyAPIView):
     queryset = BlogPost.objects.all()
     serializer_class = BlogPostSerializer
     lookup_field = "pk"
+
+def home(request):
+    return HttpResponse("Hello World!")
