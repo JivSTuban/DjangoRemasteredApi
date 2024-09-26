@@ -1,10 +1,10 @@
 from django.db import models
 
 # Create your models here.
-class Blogpost(models.Model):
+class BlogPost(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
-    publishedDate = models.DateTimeField(auto_add_now=True)
+    publishedDate = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
