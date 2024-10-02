@@ -1,0 +1,18 @@
+{% extends 'JT_blog/base.html' %}
+
+{% block title %}Blog Post List{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">Blog Posts</h1>
+    <ul class="list-group">
+        {% for post in blog_posts %}
+            <li class="list-group-item">
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.content|truncatewords:30 }}</p>
+                <small class="text-muted">Posted on {{ post.created_at }}</small>
+            </li>
+        {% empty %}
+            <li class="list-group-item">No posts available.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
